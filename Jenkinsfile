@@ -6,7 +6,6 @@ pipeline {
                 script {
                     echo "WEBHOOK_WORKSPACE: ${WORKSPACE}"
                     echo "JOB_NAME: ${JOB_NAME}"
-                    echo "CHANGE_BRANCH: ${CHANGE_BRANCH}"
 
                     // 根据不同分支执行不同操作
 //                     if (env.BRANCH_NAME == 'develop') {
