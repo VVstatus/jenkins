@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo "branchName: ${branchName}"
+                    echo "GIT_BRANCH: ${GIT_BRANCH}"
                     echo "WORKSPACE: ${WORKSPACE}"
 
                     // 根据不同分支执行不同操作
