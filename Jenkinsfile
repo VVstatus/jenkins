@@ -13,14 +13,15 @@ pipeline {
                         // sh "cp -r ${WORKSPACE}/* ${WWW_ROOT}/${API_DEVELOP}/"
                         dir("${WWW_ROOT}/${API_DEVELOP}") {
                             // 进入当前目录后，输出当前工作目录
-                            sh "ls -la"
+                            sh "php -v"
+                            sh "composer install"
                         }
                     } else if (branchName == 'test') {
                         echo "Copying code to API_TEST directory"
                         // sh "cp -r ${WORKSPACE}/* ${WWW_ROOT}/${API_TEST}/"
                         dir("${WWW_ROOT}/${API_TEST}") {
                             // 进入当前目录后，输出当前工作目录
-                            sh "ls -la"
+
                         }
                     } else {
                         echo "Branch not recognized, no action taken."
