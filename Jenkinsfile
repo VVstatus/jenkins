@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
+                echo "JOB_NAME ${env.JOB_NAME}"
+                echo "NODE_NAME ${env.NODE_NAME}"
+                echo "WORKSPACE ${env.WORKSPACE}"
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
