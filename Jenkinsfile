@@ -7,7 +7,6 @@ pipeline {
                     echo "GIT_BRANCH: ${GIT_BRANCH}"
                     echo "WORKSPACE: ${WORKSPACE}"
 
-
                     // 根据不同分支执行不同操作
                     if (GIT_BRANCH == 'origin/develop') {
                         echo "Copying code to API_DEVELOP directory"
