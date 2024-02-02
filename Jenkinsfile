@@ -13,8 +13,6 @@ pipeline {
                         // sh "cp -r ${WORKSPACE}/* ${WWW_ROOT}/${API_DEVELOP}/"
                         dir("${WWW_ROOT}/${API_DEVELOP}") {
                             // 进入当前目录后，输出当前工作目录
-                            sh "php -v"
-                            sh "composer install"
                         }
                     } else if (branchName == 'test') {
                         echo "Copying code to API_TEST directory"
