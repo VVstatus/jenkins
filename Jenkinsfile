@@ -4,8 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo "BRANCH_NAME: ${WEBHOOK_BRANCH}"
-                    echo "WEBHOOK_WORKSPACE: ${WEBHOOK_WORKSPACE}"
+                    echo "WEBHOOK_WORKSPACE: ${WORKSPACE}"
+                    echo "WEBHOOK_WORKSPACE: ${env.WORKSPACE}"
+                    echo "JOB_NAME: ${JOB_NAME}"
+                    echo "JOB_NAME: ${env.JOB_NAME}"
 
                     // 根据不同分支执行不同操作
 //                     if (env.BRANCH_NAME == 'develop') {
