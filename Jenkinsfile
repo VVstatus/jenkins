@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo "BRANCH_NAME: ${BRANCH_NAME}"
+                    echo "BRANCH_NAME: ${env.BRANCH_NAME}"
 
                     // 根据不同分支执行不同操作
 //                     if (env.BRANCH_NAME == 'develop') {
