@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Build 12345') {
+        stage('Build') {
             steps {
                 script {
-                    echo "BRANCH_NAME: ${env.BRANCH_NAME}"
+                    echo "BRANCH_NAME: ${BRANCH_NAME}"
 
                     // 根据不同分支执行不同操作
                     if (env.BRANCH_NAME == 'develop') {
                         echo "Copying code to API_DEVELOP directory"
-                        sh "cp -r ${env.WORKSPACE}/* ${env.WWW_ROOT}/${env.API_DEVELOP}/"
+                        sh "cp -r ${WORKSPACE}/* ${WWW_ROOT}/${API_DEVELOP}/"
                         dir("${env.WWW_ROOT}/${env.API_DEVELOP}") {
                             // 进入当前目录后，输出当前工作目录
                             sh "pwd"
