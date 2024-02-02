@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build 1') {
             steps {
                 script {
                     echo "BRANCH_NAME: ${BRANCH_NAME}"
