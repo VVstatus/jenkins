@@ -20,7 +20,6 @@ pipeline {
                         echo "Copying code to API_TEST directory"
                         // sh "cp -r ${WORKSPACE}/* ${WWW_ROOT}/${API_TEST}/"
                         dir("${WWW_ROOT}/${API_TEST}") {
-                            // 进入当前目录后，输出当前工作目录
 
                         }
                     } else {
