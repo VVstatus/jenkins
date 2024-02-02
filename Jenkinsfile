@@ -4,7 +4,6 @@ pipeline {
         stage('Build 12') {
             steps {
                 script {
-                    echo "BRANCH_NAME: ${BRANCH_NAME}"
                     echo "WORKSPACE: ${WORKSPACE}"
 
                     // 根据不同分支执行不同操作
