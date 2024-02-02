@@ -4,7 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo "BRANCH_NAME: ${env.BRANCH_NAME}"
+                    echo "BRANCH_NAME: ${WEBHOOK_BRANCH}"
+                    echo "WEBHOOK_WORKSPACE: ${WEBHOOK_WORKSPACE}"
 
                     // 根据不同分支执行不同操作
 //                     if (env.BRANCH_NAME == 'develop') {
@@ -29,6 +30,8 @@ pipeline {
         }
     }
     environment {
+        WEBHOOK_BRANCH = "${env.BRANCH_NAME}"
+        WEBHOOK_WORKSPACE = "${env.WORKSPACE}"
         WWW_ROOT = '/www/wwwroot/jenkins'
         API_TEST = 'test'
         API_DEVELOP = 'develop'
